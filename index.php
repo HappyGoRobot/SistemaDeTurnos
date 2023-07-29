@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Turnos</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <!-- NAVIGACIÓN -->
@@ -24,29 +24,76 @@
 
     <!-- FORMULARIO PARA TURNOS -->
     <div class="titulo">SOLICITE SU TURNO AQUI</div>
-    <form id="turnoForm" onsubmit="enviarFormulario(event)">
-        <label for="">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+    <form id="turnoForm" action="./php/insertar.php" method="post">
+        <b>DATOS PERSONALES</b><br>
+        <label for="nombre" class="required">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
        
-        <label for="">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido">  
+        <label for="apellido" class="required">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su Apellido" required>  
         
-        <label for="">DNI:</label>
-        <input type="number" id="dni" name="dni" placeholder="Ingrese su Nº de DNI">
+        <label for="dni" class="required">DNI:</label>
+        <input type="number" id="dni" name="dni" placeholder="Ingrese su Nº de DNI" maxlength="8" required>
 
-        <label for="">Número Telefónico:</label>
-        <input type="number" id="telefono" name="telefono" placeholder="Ingrese su Nº de Telefono">
+        <label for="telefono" class="required">Número Telefónico:</label>
+        <input type="number" id="telefono" name="telefono" placeholder="Ingrese su Nº de Teléfono" maxlength="10" required>
 
-        <label for="">Selección de Turno:</label>
-        <input type="date" id="fecha" name="fecha">
+        <br><br><b>SELECCIÓN DE TURNO</b><br>
+        <label for="fecha" class="required">Día:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
-        <label for="">Hora:</label>
-        <input type="time" id="hora" name="hora">
+        <label for="hora" class="required">Hora:</label>
+        <input type="time" id="hora" name="hora" required>
 
-        <div aling="center"><input type="submit" value="Enviar"></div>
+        <div align="center"><input type="submit" value="ENVIAR"></div>
     </form>
 
-    <!-- TABLA -->
+    <?php
+    require_once("./php/conectar.php");
+    
+    $peticion = mysqli_query($pacientes, "SELECT * FROM pacientes");
+    echo '
+    <br>
+    <div class="titulo">TURNOS</div>
+    <br>
+    <table>
+    <tr>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Teléfono</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th><span style="color: green;">ACTUALIZAR</span></th>
+                <th><span style="color: red;">ELIMINAR</span></th>
+            </tr>
+        </thead>
+        <tbody>';
+        if(mysqli_num_rows($peticion) > 0){
+            while($pacientes = mysqli_fetch_assoc($peticion)){
+                echo '<tr>
+                    <td>'.$pacientes['nombre'].'</td>
+                    <td>'.$pacientes['apellido'].'</td>
+                    <td>'.$pacientes['dni'].'</td>
+                    <td>'.$pacientes['telefono'].'</td>
+                    <td>'.date("d-m-Y", strtotime($pacientes['fecha'])).'</td>
+                    <td>'.$pacientes['hora'].'</td>
+                    <td><a class="actualizar" href="./php/editar.php?idpaciente='.$pacientes['idpaciente'].'&no='.$pacientes['nombre'].'&ap='.$pacientes['apellido'].'&dni='.$pacientes['dni'].'&tf='.$pacientes['telefono'].'&fh='.$pacientes['fecha'].'&hr='.$pacientes['hora'].'">ACTUALIZAR</a> ✔️</td>
+                    <td><a class="eliminar" href="./php/eliminar.php?idpaciente='.$pacientes['idpaciente'].'">ELIMINAR</a> ❌</td>
+                </tr>';
+            }
+        }
+        else {
+            echo '<tr>
+            <td colspan="8">No existen registros para mostrar.</td>
+            </tr>';
+        }
+    echo '</tbody></table>'
+    ?>
+
+    <!-- TABLA
     <br>
     <div class="titulo">TURNOS</div>
     <br>
@@ -72,7 +119,7 @@
                 <td>Especialidad</td>
             </tr>
         </tbody>
-    </table>
+    </table>-->
     
 </div>
 </div>
