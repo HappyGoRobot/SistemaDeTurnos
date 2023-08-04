@@ -34,8 +34,9 @@
 
     <!-- FORMULARIO PARA TURNOS -->
     <div class="titulo">SOLICITE SU TURNO AQUI</div>
-    <form id="turnoForm" action="./php/insertar.php" method="post">
-        <b>DATOS PERSONALES</b><br>
+    <form id="turnoForm" class="turnoformulario" action="./php/insertar.php" method="post">
+        <div class="datospersonales">
+            <b>DATOS PERSONALES</b><br>
         <label for="nombre" class="required">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Ingrese su Nombre" required>
        
@@ -47,15 +48,35 @@
 
         <label for="telefono" class="required">Número Telefónico:</label>
         <input type="number" id="telefono" name="telefono" placeholder="Ingrese su Nº de Teléfono" maxlength="10" required>
+</div>
 
-        <br><br><b>SELECCIÓN DE TURNO</b><br>
+        <div class="datosturnos">
+            <b>SELECCIÓN DE TURNO</b><br>
         <label for="fecha" class="required">Día:</label>
         <input type="date" id="fecha" name="fecha" required>
 
         <label for="hora" class="required">Hora:</label>
         <input type="time" id="hora" name="hora" required>
 
-        <div align="center"><input type="submit" value="ENVIAR"></div>
+        <label for="medico" class="required">Médico:</label>
+        <br>
+        <select name="medico" id="medico">
+        <option value="">Escoja un médico</option>
+        <optgroup label="Especialidad 1">
+            <option value="">Médico 1</option>
+            <option value="">Médico 2</option>
+            <option value="">Médico 3</option>
+        </optgroup>
+        <optgroup label="Especialidad 2">
+            <option value="">Médico 4</option>
+            <option value="">Médico 5</option>
+            <option value="">Médico 6</option>
+        </optgroup>
+        </select>
+</div>
+
+        <br>
+        <div class="enviar"><input type="submit" value="ENVIAR"></div>
     </form>
 
     <?php

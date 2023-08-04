@@ -71,7 +71,7 @@ label:first-child {
 }
 input {
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     padding: 6px;
     border: 1px solid gray;
     border-radius: 2px;
@@ -92,13 +92,34 @@ input[type=submit] {
 form {
     display: block;
     height: auto;
-    width: 450px;
-    padding: 16px 20px 16px 16px;
+    /*width: 450px;*/
+    /*padding: 16px 20px 16px 16px;*/
     border: 3px solid #94ADD7;
     border-radius: 8px;
     border-top-left-radius: 0;
     box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
     background-color: white;
+}
+.turnoformulario {
+    overflow: hidden;
+    padding: 16px 20px 16px 16px;
+    height: auto;
+}
+.datospersonales {
+    width: 400px;
+    float: left;
+}
+.datosturnos {
+    width: 375px;
+    float: right;
+}
+.enviar {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 table {
     display: inline-block;
@@ -142,4 +163,16 @@ tr, th {
     padding: 6px;
     background-color: rgb(148, 173, 215, 0.7);
     font-weight: bold;
+}
+.required::after {
+    content: ' *';
+    color: red;
+}
+a.eliminar:link, a.eliminar:visited { 
+    color: red;
+    text-decoration: underline;
+}
+a.actualizar:link, a.actualizar:visited { 
+    color: green; 
+    text-decoration: underline;
 }
