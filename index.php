@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Turnos</title>
     <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
+    <script>
+    function confirmar() {
+        var resultado = confirm("¿Está seguro de querer eliminar este registro?");
+        if (resultado == false) {
+            return;
+        } else {
+            window.location = "./php/eliminar.php?idpaciente='.$pacientes['idpaciente'].'"
+}
+}
+    </script>
 </head>
 <body>
-    <!-- NAVIGACIÓN -->
+    <!-- NAVIGACIÓN 
     <nav>
         <ul>
             <li>
@@ -17,7 +27,7 @@
             <li><a href="">Seleccione Turno Disponible</a></li>
             <li><a href="">Seleccione Obra Social</a></li>
         </ul>
-    </nav>
+    </nav>--->
 
     <div class="container">
         <div class="contenido">
@@ -73,7 +83,8 @@
         <tbody>';
         if(mysqli_num_rows($peticion) > 0){
             while($pacientes = mysqli_fetch_assoc($peticion)){
-                echo '<tr>
+                echo '
+                <tr>
                     <td>'.$pacientes['nombre'].'</td>
                     <td>'.$pacientes['apellido'].'</td>
                     <td>'.$pacientes['dni'].'</td>
@@ -81,7 +92,7 @@
                     <td>'.date("d-m-Y", strtotime($pacientes['fecha'])).'</td>
                     <td>'.$pacientes['hora'].'</td>
                     <td><a class="actualizar" href="./php/editar.php?idpaciente='.$pacientes['idpaciente'].'&no='.$pacientes['nombre'].'&ap='.$pacientes['apellido'].'&dni='.$pacientes['dni'].'&tf='.$pacientes['telefono'].'&fh='.$pacientes['fecha'].'&hr='.$pacientes['hora'].'">ACTUALIZAR</a> ✔️</td>
-                    <td><a class="eliminar" href="./php/eliminar.php?idpaciente='.$pacientes['idpaciente'].'">ELIMINAR</a> ❌</td>
+                    <td><a class="eliminar" href="./php/eliminar.php?idpaciente='.$pacientes['idpaciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
             }
         }
