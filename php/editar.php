@@ -4,41 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css?v=<?php echo time(); ?>">
-    <title>Modificar Turno</title>
+    <link rel="stylesheet" href="../styles.css?v=<?php echo time();?>">
+    <title>Modificar Datos - Paciente</title>
 </head>
 <body>
-<div class="container">
+    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../index.php">VOLVER</a>
+    <div class="container">
         <div class="contenido">
-            <div class="titulo">MODIFICAR TURNO</div>
-            <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../index.php">VOLVER</a>
-            <br>
-        <form action="actualizar.php" method="post">
-        <input type="hidden" name="idpaciente" value="<?php echo $_GET['idpaciente'];?>">
-
-        <b>DATOS PERSONALES</b><br>
-        <label for="nombre" class="required">Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $_GET['no']; ?>">
-        
-        <label for="apellido" class="required">Apellido:</label>
-        <input type="text" name="apellido" value="<?php echo $_GET['ap']; ?>">
-        
-        <label for="dni" class="required">DNI:</label>
-        <input type="number" name="dni" value="<?php echo $_GET['dni']; ?>" maxlength="8">
-    
-        <label for="telefono" class="required">Número Telefónico:</label>
-        <input type="number" name="telefono" value="<?php echo $_GET['tf']; ?>" maxlength="10">
-
-        <br><br><b>SELECCIÓN DE TURNO</b><br>
-        <label for="fecha" class="required">Día:</label>
-        <input type="date" name="fecha" value="<?php echo $_GET['fh']; ?>">
-    
-        <label for="hora" class="required">Hora:</label>
-        <input type="time" name="hora" value="<?php echo $_GET['hr']; ?>">
-    
-        <br><div align="center"><input type="submit" value="ACTUALIZAR"></div>
-    </form>
-</div>
-</div>
+            <div class="titulo" style="box-shadow: none;">MODIFICAR DATOS PACIENTE</div>
+                <form action="actualizar.php" class="turnoformulario" method="post">
+                <input type="hidden" name="ID_Paciente" value="<?php echo $_GET['ID_Paciente'];?>">
+                <label for="NombreCompleto" class="required">Nombre Completo:</label>
+                <input type="text" id="NombreCompleto" name="NombreCompleto" value="<?php echo $_GET['no'];?>" required>
+                <label for="FechaNacimiento" class="required">Fecha de Nacimiento:</label>
+                <input type="date" id="FechaNacimiento" name="FechaNacimiento" value="<?php echo $_GET['fn'];?>" required>
+                <label for="" class="required">Género:</label><br>
+                <input type="radio" name="Genero" value="Masculino" required>
+                <label for="Masculino" style="font-weight: lighter;">Masculino</label><br>
+                <input type="radio" name="Genero" value="Femenino" required>
+                <label for="Femenino" style="font-weight: lighter;">Femenino</label><br>
+                <label for="DNI" class="required">DNI:</label>
+                <input type="number" id="DNI" name="DNI" value="<?php echo $_GET['dni'];?>" maxlength="8" required>
+                <label for="NumeroSeguroSocial" class="required">Seguro Social:</label>
+                <input type="number" id="NumeroSeguroSocial" name="NumeroSeguroSocial" value="<?php echo $_GET['ss'];?>" required>
+                <label for="DireccionPaciente" class="required">Dirección:</label>
+                <input type="text" id="DireccionPaciente" name="DireccionPaciente" value="<?php echo $_GET['di'];?>" required>
+                <label for="TelefonoContacto" class="required">Número Telefónico:</label>
+                <input type="number" id="TelefonoContacto" name="TelefonoContacto" value="<?php echo $_GET['tf'];?>" required>
+                <br>
+                <div class="enviar"><input type="submit" value="MODIFICAR"></div>
+                </form>
+            </div>
+        </div>
+        <footer style="margin: 0;">Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>
 </body>
 </html>

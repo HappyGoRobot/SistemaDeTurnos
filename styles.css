@@ -18,7 +18,7 @@ nav {
     justify-content: center;
 }
 footer {
-    margin: 8px 0 16px 0;
+    margin: 16px 0 24px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,6 +89,39 @@ input[type=submit] {
     width: 25%;
     box-shadow: none;
 }
+input[type=radio] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: #94ADD7;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #94ADD7;
+    border-radius: 50%;
+}
+select optgroup{
+    background: white;
+    color: black;
+}
+select {
+    font-size: 16px;
+    padding: 4px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    box-shadow: 2px 2px 0px 0px rgb(124, 115, 192, 0.5);
+}
+input[type=radio]:checked {
+    appearance: none;
+    background-color: rgb(148, 173, 215, 0.7);
+    margin: 0;
+    font: inherit;
+    color: #94ADD7;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #94ADD7;
+    border-radius: 50%;
+}
 form {
     display: block;
     height: auto;
@@ -129,6 +162,7 @@ table {
     border: 3px solid #94ADD7;
     border-radius: 8px;
     border-top-left-radius: 0;
+    border-top-right-radius: 0;
     border-spacing: 6px;
     box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
     background-color: white;
@@ -143,10 +177,10 @@ tr, th {
 .container {
     margin: auto;
     width: 900px;
-    background: white;
+    /*background: white;
     border: 3px solid #94ADD7;
     border-radius: 8px;
-    box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
+    box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3)*/;
 }
 .contenido {
     margin: auto;
@@ -162,6 +196,7 @@ tr, th {
     border-bottom-right-radius: 0;
     padding: 6px;
     background-color: rgb(148, 173, 215, 0.7);
+    box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
     font-weight: bold;
 }
 .required::after {
