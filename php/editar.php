@@ -12,7 +12,7 @@
     <div class="container">
         <div class="contenido">
             <div class="titulo" style="box-shadow: none;">MODIFICAR DATOS PACIENTE</div>
-                <form action="actualizar.php" class="turnoformulario" method="post">
+                <form action="actualizar.php" class="formulario" method="post">
                 <input type="hidden" name="ID_Paciente" value="<?php echo $_GET['ID_Paciente'];?>">
                 <label for="NombreCompleto" class="required">Nombre Completo:</label>
                 <input type="text" id="NombreCompleto" name="NombreCompleto" value="<?php echo $_GET['no'];?>" required>

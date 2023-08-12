@@ -32,66 +32,65 @@
 
     <div class="container">
         <div class="contenido">
-
             <div class="titulo" style="box-shadow: none;">SOLICITE SU TURNO AQUI</div>
-            <form id="turnoForm" class="turnoformulario" action="./php/insertar.php" method="post">
+            <form id="turnoForm" class="formulario" action="./php/insertar.php" method="post">
                 <div class="datospersonales">
-                <b>DATOS PERSONALES</b><br>
+                    <b>DATOS PERSONALES</b><br>
+                    
+                    <label for="NombreCompleto" class="required">Nombre Completo:</label>
+                    <input type="text" id="NombreCompleto" name="NombreCompleto" placeholder="Ingrese su Nombre Completo" required>
 
-                <label for="NombreCompleto" class="required">Nombre Completo:</label>
-                <input type="text" id="NombreCompleto" name="NombreCompleto" placeholder="Ingrese su Nombre Completo" required>
+                    <label for="FechaNacimiento" class="required">Fecha de Nacimiento:</label>
+                    <input type="date" id="FechaNacimiento" name="FechaNacimiento" required>
 
-                <label for="FechaNacimiento" class="required">Fecha de Nacimiento:</label>
-                <input type="date" id="FechaNacimiento" name="FechaNacimiento" required>
+                    <label for="Genero" class="required">Género:</label><br>
+                    <input type="radio" name="Genero" value="Masculino" required>
+                    <label for="Masculino" style="font-weight: lighter;">Masculino</label><br>
+                    <input type="radio" name="Genero" value="Femenino" required>
+                    <label for="Femenino" style="font-weight: lighter;">Femenino</label><br>
 
-                <label for="Genero" class="required">Género:</label><br>
-                <input type="radio" name="Genero" value="Masculino" required>
-                <label for="Masculino" style="font-weight: lighter;">Masculino</label><br>
-                <input type="radio" name="Genero" value="Femenino" required>
-                <label for="Femenino" style="font-weight: lighter;">Femenino</label><br>
+                    <label for="DNI" class="required">DNI:</label>
+                    <input type="number" id="DNI" name="DNI" placeholder="Ingrese su Nº de DNI" maxlength="8" required>
 
-                <label for="DNI" class="required">DNI:</label>
-                <input type="number" id="DNI" name="DNI" placeholder="Ingrese su Nº de DNI" maxlength="8" required>
+                    <label for="NumeroSeguroSocial" class="required">Seguro Social:</label>
+                    <input type="number" id="NumeroSeguroSocial" name="NumeroSeguroSocial" placeholder="Ingrese su Nº de Seguro Social" required>
 
-                <label for="NumeroSeguroSocial" class="required">Seguro Social:</label>
-                <input type="number" id="NumeroSeguroSocial" name="NumeroSeguroSocial" placeholder="Ingrese su Nº de Seguro Social" required>
+                    <label for="TelefonoContacto" class="required">Número Telefónico:</label>
+                    <input type="number" id="TelefonoContacto" name="TelefonoContacto" placeholder="Ingrese su Nº de Teléfono" required>
 
-                <label for="DireccionPaciente" class="required">Dirección:</label>
-                <input type="text" id="DireccionPaciente" name="DireccionPaciente" placeholder="Ingrese su Domicilio" required>
+                    <label for="DireccionPaciente" class="required">Dirección:</label>
+                    <input type="text" id="DireccionPaciente" name="DireccionPaciente" placeholder="Ingrese su Domicilio" required>
+                    </div>
 
-                <label for="TelefonoContacto" class="required">Número Telefónico:</label>
-                <input type="number" id="TelefonoContacto" name="TelefonoContacto" placeholder="Ingrese su Nº de Teléfono" required>
-                </div>
+                    <div class="datosturnos">
+                    <b>SELECCIÓN DE TURNO</b><br>
 
-                <div class="datosturnos">
-                <b>SELECCIÓN DE TURNO</b><br>
+                    <label for="Fecha" class="required">Día:</label>
+                    <input type="date" id="Fecha" name="Fecha">
 
-                <label for="Fecha" class="required">Día:</label>
-                <input type="date" id="Fecha" name="Fecha">
+                    <label for="Hora" class="required">Hora:</label>
+                    <input type="time" id="Hora" name="Hora">
 
-                <label for="Hora" class="required">Hora:</label>
-                <input type="time" id="Hora" name="Hora">
+                    <label for="ID_Medico" class="required">Médico:</label><br>
+                    <select name="Medico" id="Medico">
+                        <option value="">Escoja un médico</option>
+                        <optgroup label="Especialidad 1">
+                            <option value="1">Médico 1</option>
+                            <option value="2">Médico 2</option>
+                            <option value="3">Médico 3</option>
+                        </optgroup>
+                        <optgroup label="Especialidad 2">
+                            <option value="4">Médico 4</option>
+                            <option value="5">Médico 5</option>
+                            <option value="6">Médico 6</option>
+                        </optgroup>
+                    </select>
+                    </div>
 
-                <label for="ID_Medico" class="required">Médico:</label><br>
-                <select name="Medico" id="Medico">
-                    <option value="">Escoja un médico</option>
-                    <optgroup label="Especialidad 1">
-                        <option value="1">Médico 1</option>
-                        <option value="2">Médico 2</option>
-                        <option value="3">Médico 3</option>
-                    </optgroup>
-                    <optgroup label="Especialidad 2">
-                        <option value="4">Médico 4</option>
-                        <option value="5">Médico 5</option>
-                        <option value="6">Médico 6</option>
-                    </optgroup>
-                </select>
-                </div>
+                    <input type="hidden" id="Estado" name="Estado" value="N/A">
+                    <input type="hidden" id="Observaciones" name="Observaciones" value="Sin Observaciones.">
 
-                <input type="hidden" id="Estado" name="Estado" value="N/A">
-                <input type="hidden" id="Observaciones" name="Observaciones" value="N/A">
-
-                <br><div class="enviar"><input type="submit" value="ENVIAR"></div>
+                    <br><div class="enviar"><input type="submit" value="ENVIAR"></div>
             </form>
         </div>
     </div>
@@ -104,8 +103,8 @@
 
     echo '
     <div align="center">
-    <div class="titulo">PACIENTES</div>
-    <br>
+    <div class="tabla">
+    <div align="left"><div class="titulo">PACIENTES</div></div>
     <table>
     <tr>
         <thead>
@@ -115,8 +114,8 @@
                 <th>Género</th>
                 <th>DNI</th>
                 <th>Seguro Social</th>
-                <th>Dirección</th>
                 <th>Teléfono</th>
+                <th>Dirección</th>
                 <th><span style="color: green;">ACTUALIZAR</span></th>
                 <th><span style="color: red;">ELIMINAR</span></th>
             </tr>
@@ -131,8 +130,8 @@
                     <td>'.$pacientes['Genero'].'</td>
                     <td>'.$pacientes['DNI'].'</td>
                     <td>'.$pacientes['NumeroSeguroSocial'].'</td>
-                    <td>'.$pacientes['DireccionPaciente'].'</td>
                     <td>'.$pacientes['TelefonoContacto'].'</td>
+                    <td>'.$pacientes['DireccionPaciente'].'</td>
                     <td><a class="actualizar" href="./php/editar.php?ID_Paciente='.$pacientes['ID_Paciente'].'&no='.$pacientes['NombreCompleto'].'&fn='.$pacientes['FechaNacimiento'].'&gr='.$pacientes['Genero'].'&dni='.$pacientes['DNI'].'&ss='.$pacientes['NumeroSeguroSocial'].'&di='.$pacientes['DireccionPaciente'].'&tf='.$pacientes['TelefonoContacto'].'">ACTUALIZAR</a> ✔️</td>
                     <td><a class="eliminar" href="./php/eliminar.php?ID_Paciente='.$pacientes['ID_Paciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
@@ -143,13 +142,12 @@
             <td colspan="9">No existen registros para mostrar.</td>
             </tr>';
         }
-    echo '</tbody></table>';
+    echo '</tbody></table></div>';
 
     echo '
-    <br>
-    <br>
-    <div class="titulo">MÉDICOS</div>
-    <br>
+    <br><br>
+    <div class="tabla">
+    <div align="left"><div class="titulo">MÉDICOS</div></div>
     <table>
     <tr>
         <thead>
@@ -181,12 +179,12 @@
             <td colspan="6">No existen registros para mostrar.</td>
             </tr>';
         }
-    echo '</tbody></table>';
+    echo '</tbody></table> <br><button><a href="php/agregarmedico.php">AGREGAR NUEVO MÉDICO</a></button></div>';
 
 echo '
     <br><br>
-    <div class="titulo">TURNOS</div>
-    <br>
+    <div class="tabla">
+    <div align="left"><div class="titulo">TURNOS</div></div>
     <table>
     <tr>
         <thead>
@@ -222,7 +220,7 @@ echo '
             <td colspan="8">No existen registros para mostrar.</td>
             </tr>';
         }
-    echo '</tbody></table>';
+    echo '</tbody></table></div>';
 ?>
 
 <footer>Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>

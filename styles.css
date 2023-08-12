@@ -89,6 +89,17 @@ input[type=submit] {
     width: 25%;
     box-shadow: none;
 }
+button {
+    color: black;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: rgb(148, 173, 215, 0.7);
+    box-shadow: none;
+    position: absolute;
+    top: 10px;
+    right: 2px;
+}
 input[type=radio] {
     appearance: none;
     background-color: #fff;
@@ -133,7 +144,7 @@ form {
     box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
     background-color: white;
 }
-.turnoformulario {
+.formulario {
     overflow: hidden;
     padding: 16px 20px 16px 16px;
     height: auto;
@@ -210,4 +221,9 @@ a.eliminar:link, a.eliminar:visited {
 a.actualizar:link, a.actualizar:visited { 
     color: green; 
     text-decoration: underline;
+}
+
+.tabla {
+    position: relative;
+    display: inline-block;
 }

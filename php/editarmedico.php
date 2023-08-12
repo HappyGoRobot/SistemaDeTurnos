@@ -12,12 +12,12 @@
     <div class="container">
         <div class="contenido">
             <div class="titulo" style="box-shadow: none;">MODIFICAR DATOS MÉDICO</div>
-                <form action="actualizarmedico.php" class="turnoformulario" method="post">
+                <form action="actualizarmedico.php" class="formulario" method="post">
                 <input type="hidden" name="ID_Medico" value="<?php echo $_GET['ID_Medico'];?>">
                 <label for="NombreCompletoM" class="required">Nombre Completo:</label>
                 <input type="text" id="NombreCompleto" name="NombreCompletoM" value="<?php echo $_GET['ncm'];?>" required>
                 <label for="EspecialidadMedica" class="required">Especialidad:</label>
-                <input type="text" id="FechaNacimiento" name="EspecialidadMedica" value="<?php echo $_GET['es'];?>" required>
+                <input type="text" id="EspecialidadMedica" name="EspecialidadMedica" value="<?php echo $_GET['es'];?>" required>
                 <label for="TelefonoContactoM" class="required">Teléfono:</label>
                 <input type="number" id="TelefonoContactoM" name="TelefonoContactoM" value="<?php echo $_GET['tfc'];?>" maxlength="8" required>
                 <label for="DireccionConsulta" class="required">Dirección:</label>
