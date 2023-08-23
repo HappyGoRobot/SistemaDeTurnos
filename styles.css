@@ -121,6 +121,7 @@ select {
     border: 1px solid gray;
     border-radius: 2px;
     box-shadow: 2px 2px 0px 0px rgb(124, 115, 192, 0.5);
+    margin-bottom: 8px;
 }
 input[type=radio]:checked {
     appearance: none;

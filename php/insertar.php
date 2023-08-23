@@ -6,12 +6,13 @@ $peticion = mysqli_query($pacientes, "INSERT INTO pacientes VALUES(NULL,
     '".$_POST['FechaNacimiento']."',
     '".$_POST['Genero']."',
     '".$_POST['DNI']."',
-    '".$_POST['NumeroSeguroSocial']."',
+    '".$_POST['id_os']."',
     '".$_POST['DireccionPaciente']."',
     '".$_POST['TelefonoContacto']."'
     )");
 
 $peticion2 = mysqli_query($turnos, "INSERT INTO turnos VALUES(NULL,
+    '".$_POST['ID_Paciente']."',
     '".$_POST['Fecha']."',
     '".$_POST['Hora']."',
     '".$_POST['Medico']."',

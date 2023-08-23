@@ -25,8 +25,16 @@
                 <label for="Femenino" style="font-weight: lighter;">Femenino</label><br>
                 <label for="DNI" class="required">DNI:</label>
                 <input type="number" id="DNI" name="DNI" value="<?php echo $_GET['dni'];?>" maxlength="8" required>
-                <label for="NumeroSeguroSocial" class="required">Seguro Social:</label>
-                <input type="number" id="NumeroSeguroSocial" name="NumeroSeguroSocial" value="<?php echo $_GET['ss'];?>" required>
+                <label for="id_os" class="required">OBRA SOCIAL:</label><br>
+                    <select name="id_os" id="id_os" required>
+                        <option value="" disabled selected>Seleccione una Obra Social</option>
+                        <option value=1>DAMSU</option>
+                        <option value=2>Jerárquicos</option>
+                        <option value=3>Obra Social Provincia</option>
+                        <option value=4>OSECAC</option>
+                        <option value=5>OSTES</option>
+                        <option value=6>Sancor Salud</option>
+                    </select><br>
                 <label for="DireccionPaciente" class="required">Dirección:</label>
                 <input type="text" id="DireccionPaciente" name="DireccionPaciente" value="<?php echo $_GET['di'];?>" required>
                 <label for="TelefonoContacto" class="required">Número Telefónico:</label>
