@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Nuevo Médico</title>
-    <link rel="stylesheet" href="../styles.css?v=<?php echo time();?>">
+    <link rel="stylesheet" href="../../styles.css?v=<?php echo time();?>">
 </head>
 <body>
 <div class="container">
         <div class="contenido">
-            <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../index.php">VOLVER</a>
+            <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="medicos.php">VOLVER</a>
             <div class="titulo" style="box-shadow: none;">AGREGAR NUEVO MÉDICO</div>
-            <form id="turnoForm" class="formulario" action="insertarmedico.php" method="post">
+            <form id="turnoForm" class="formulario" action="insertar.php" method="post">
                 <label for="NombreCompletoM" class="required">Nombre Completa:</label>
                 <input type="text" id="NombreCompletoM" name="NombreCompletoM" placeholder="Ingrese Nombre Completo" required>
                 <label for="EspecialidadMedica" class="required">Especialidad:</label>

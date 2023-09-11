@@ -12,15 +12,15 @@ $peticion = mysqli_query($pacientes, "INSERT INTO pacientes VALUES(NULL,
     )");
 
 $peticion2 = mysqli_query($turnos, "INSERT INTO turnos VALUES(NULL,
-    '".$_POST['ID_Paciente']."',
+    '".$_POST['DNI']."',
     '".$_POST['Fecha']."',
-    '".$_POST['Hora']."',
+    '".$_POST['DiaHora']."',
     '".$_POST['Medico']."',
     '".$_POST['Estado']."',
     '".$_POST['Observaciones']."'
     )");
 
 if($peticion){
-    header("Location: ../index.php");
+    header("Location: formulario.php");
 }
 ?>

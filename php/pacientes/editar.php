@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles.css?v=<?php echo time();?>">
     <title>Modificar Datos - Paciente</title>
+    <link rel="stylesheet" href="../../styles.css?v=<?php echo time();?>">
+    <script>
+    function confirmar() {
+        var resultado = confirm("¿Está seguro de querer modificar este registro?");
+        if(resultado == true) {
+            return true;
+        }
+        else {
+            event.preventDefault();
+            location.reload();
+        }
+    }
+    </script>
 </head>
 <body>
-    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../index.php">VOLVER</a>
+    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="pacientes.php">VOLVER</a>
     <div class="container">
         <div class="contenido">
             <div class="titulo" style="box-shadow: none;">MODIFICAR DATOS PACIENTE</div>
@@ -40,7 +52,7 @@
                 <label for="TelefonoContacto" class="required">Número Telefónico:</label>
                 <input type="number" id="TelefonoContacto" name="TelefonoContacto" value="<?php echo $_GET['tf'];?>" required>
                 <br>
-                <div class="enviar"><input type="submit" value="MODIFICAR"></div>
+                <div class="enviar"><input type="submit" value="MODIFICAR" onclick="confirmar();"></div>
                 </form>
             </div>
         </div>

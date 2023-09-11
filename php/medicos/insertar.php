@@ -1,5 +1,5 @@
 <?php
-require_once("./conectar.php");
+require_once("../../conectar.php");
 
 $peticion = mysqli_query($medicos, "INSERT INTO medicos VALUES(NULL,
     '".$_POST['NombreCompletoM']."',
@@ -9,6 +9,6 @@ $peticion = mysqli_query($medicos, "INSERT INTO medicos VALUES(NULL,
     )");
 
 if($peticion){
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
 }
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once("./conectar.php");
+require_once("../../php/conectar.php");
 
 $peticion = mysqli_query($pacientes, "UPDATE pacientes SET 
     NombreCompleto = '".$_POST['NombreCompleto']."',
@@ -13,6 +13,6 @@ $peticion = mysqli_query($pacientes, "UPDATE pacientes SET
     LIMIT 1");
 
 if($peticion){
-    header("Location: ../index.php");
+    header("Location: ../../index.php");
 }
 ?>
