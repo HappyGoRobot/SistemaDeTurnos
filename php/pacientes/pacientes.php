@@ -29,7 +29,7 @@
             <li><a href="">Seleccione Obra Social</a></li>
         </ul>
     </nav>--->
-    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../home.php">VOLVER</a>
+    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../administrador.php">VOLVER</a>
     <div align="center"><h1>ADMINISTRADOR DE: PACIENTES</h1></div>
 
     <?php
