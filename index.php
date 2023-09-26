@@ -42,8 +42,8 @@ a {
     <br><br>
     <button><a href="php/turnos/consultar.php">CONSULTA SU TURNO</a></button>
     <footer>Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>
-    <!-- Código JavaScript -->
 
+    <!-- Código JavaScript -->
 <script>
     let turnos = [];
 

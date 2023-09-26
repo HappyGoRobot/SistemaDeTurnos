@@ -5,37 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Turnos</title>
     <link rel="stylesheet" href="../../styles.css">
-    <script>
-    function confirmar() {
-        var resultado = confirm("¿Está seguro de querer eliminar este registro?");
-        if(resultado == true) {
-            return true;
-        }
-        else {
-            event.preventDefault();
-            location.reload();
-        }
-    }
-    </script>
+    <script src="../../js/confirmar.js"></script>
 </head>
 <body>
-<!--<nav>
-        <ul>
-            <li>
-                <a href="">Complete con sus Datos</a>
-            </li>
-            <li><a href="">Seleccione Especialidad</a></li>
-            <li><a href="">Seleccione Turno Disponible</a></li>
-            <li><a href="">Seleccione Obra Social</a></li>
-        </ul>
-    </nav>--->
     <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../administrador.php">VOLVER</a>
     <div align="center"><h1>ADMINISTRADOR DE: PACIENTES</h1></div>
-
     <?php
     require_once("../../php/conectar.php");
     $peticion = mysqli_query($pacientes, "SELECT pacientes.*, obrasocial.obrasocial FROM pacientes, obrasocial WHERE obrasocial.id_os = pacientes.id_os");
-
     echo '
     <div align="center">
     <div class="tabla">
@@ -77,7 +54,7 @@
             <td colspan="9">No existen registros para mostrar.</td>
             </tr>';
         }
-    echo '</tbody></table></div>';
+    echo '</tbody></table> <br><button><a href="agregar.php">AGREGAR NUEVO PACIENTE</a></button></div>';
 ?>
 <footer>Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>
 </body>
