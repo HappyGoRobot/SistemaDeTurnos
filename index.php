@@ -17,26 +17,26 @@ html {
     background-color: #DFDFDF;
 }
 footer {
-    margin: 16px 0 24px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 16px 0 24px 0;
 }
 button {
-    font-size: 18px;
     display: inline-block;
     width: auto;
+    font-size: 18px;
+    font-weight: bold;
     border: 3px solid #94ADD7;
     border-radius: 8px;
     padding: 6px;
     background-color: rgb(148, 173, 215, 0.7);
     box-shadow: 4px 4px 0px 0px rgb(124, 115, 192, 0.3);
-    font-weight: bold;
 }
 a {
     text-decoration: none;
 }
-    </style>
+</style>
 <body>
     <button><a href="php/formulario.php">SOLICITE SU TURNO</a></button>
     <br><br>

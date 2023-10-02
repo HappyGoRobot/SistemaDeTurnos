@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Turnos</title>
+    <title>Administrador de: Turnos</title>
     <link rel="stylesheet" href="../../styles.css?v=<?php echo time();?>">
     <script src="../../js/confirmar.js"></script>
 </head>
@@ -41,7 +41,7 @@ echo '
                     <td>'.$turnos['Estado'].'</td>
                     <td>'.$turnos['Observaciones'].'</td>
                     <td><a class="actualizar" href="editar.php?ID_Turno='.$turnos['ID_Turno'].'&dni='.$turnos['DNI'].'&dh='.$turnos['DiaHora'].'&es='.$turnos['Estado'].'&ob='.$turnos['Observaciones'].'">ACTUALIZAR</a> ✔️</td>
-                    <td><a class="eliminar" href="../eliminar.php?ID_Turno='.$turnos['ID_Turno'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
+                    <td><a class="eliminar" href="eliminar.php?ID_Turno='.$turnos['ID_Turno'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
             }
         }

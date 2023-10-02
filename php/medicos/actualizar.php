@@ -1,5 +1,5 @@
 <?php
-require_once("../../conectar.php");
+require_once("../conectar.php");
 
 $peticion = mysqli_query($medicos, "UPDATE medicos SET 
     NombreCompletoM = '".$_POST['NombreCompletoM']."',

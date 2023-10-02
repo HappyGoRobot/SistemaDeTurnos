@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,7 @@ input[type=text] {
             <button type="submit" class="search">BUSCAR</button>
         </form>
     <?php 
-    require_once("../../php/conectar.php");
+    require_once("../conectar.php");
     if(isset($_GET['ID_Turno'])) {
         $ID_Turno = $_GET['ID_Turno'];
         $query = mysqli_query($turnos, "SELECT turnos.*, pacientes.NombreCompleto, medicos.NombreCompletoM FROM turnos, pacientes, medicos WHERE ID_Turno='$ID_Turno' AND pacientes.DNI = turnos.DNI AND medicos.ID_Medico = turnos.Medico");
@@ -83,6 +83,7 @@ input[type=text] {
                 </tr>';
             }
         }
-?></div>
+?>
+</div>
 </body>
 </html>

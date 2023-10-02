@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Turnos</title>
+    <title>Administrador de: Pacientes</title>
     <link rel="stylesheet" href="../../styles.css">
     <script src="../../js/confirmar.js"></script>
 </head>
@@ -45,7 +45,7 @@
                     <td>'.$pacientes['TelefonoContacto'].'</td>
                     <td>'.$pacientes['DireccionPaciente'].'</td>
                     <td><a class="actualizar" href="editar.php?ID_Paciente='.$pacientes['ID_Paciente'].'&no='.$pacientes['NombreCompleto'].'&fn='.$pacientes['FechaNacimiento'].'&gr='.$pacientes['Genero'].'&dni='.$pacientes['DNI'].'&ss='.$pacientes['obrasocial'].'&di='.$pacientes['DireccionPaciente'].'&tf='.$pacientes['TelefonoContacto'].'">ACTUALIZAR</a> ✔️</td>
-                    <td><a class="eliminar" href="../eliminar.php?ID_Paciente='.$pacientes['ID_Paciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
+                    <td><a class="eliminar" href="eliminar.php?ID_Paciente='.$pacientes['ID_Paciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
             }
         }
