@@ -8,11 +8,11 @@
     <script src="../../js/confirmar.js"></script>
 </head>
 <body>
-    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../administrador.php">VOLVER</a>
+    <a class="volver" href="../administrador.php">VOLVER</a>
     <div align="center"><h1>ADMINISTRADOR DE: TURNOS</h1></div>
     <?php
     require_once("../../php/conectar.php");
-    $peticion3 = mysqli_query($turnos, "SELECT turnos.*, pacientes.NombreCompleto, medicos.NombreCompletoM FROM turnos, pacientes, medicos WHERE pacientes.DNI = turnos.DNI AND medicos.ID_Medico = turnos.Medico");
+    $peticion = mysqli_query($turnos, "SELECT turnos.*, pacientes.nombrepaciente, medicos.nombremedico FROM turnos, pacientes, medicos WHERE pacientes.dni = turnos.dni AND medicos.idmedico = turnos.idmedico");
 echo '
     <div align="center">
     <div class="tabla">
@@ -25,23 +25,21 @@ echo '
                 <th>PACIENTE</th>
                 <th>MÉDICO</th>
                 <th>ESTADO</th>
-                <th>OBSERVACIONES</th>
                 <th><span style="color: green;">ACTUALIZAR</span></th>
                 <th><span style="color: red;">ELIMINAR</span></th>
             </tr>
         </thead>
         <tbody>';
-        if(mysqli_num_rows($peticion3) > 0){
-            while($turnos = mysqli_fetch_assoc($peticion3)){
+        if(mysqli_num_rows($peticion) > 0){
+            while($turnos = mysqli_fetch_assoc($peticion)){
                 echo '
                 <tr>
-                    <td>'.$turnos['DiaHora'].'</td>
-                    <td>'.$turnos['NombreCompleto'].'</td>
-                    <td>'.$turnos['NombreCompletoM'].'</td>
-                    <td>'.$turnos['Estado'].'</td>
-                    <td>'.$turnos['Observaciones'].'</td>
-                    <td><a class="actualizar" href="editar.php?ID_Turno='.$turnos['ID_Turno'].'&dni='.$turnos['DNI'].'&dh='.$turnos['DiaHora'].'&es='.$turnos['Estado'].'&ob='.$turnos['Observaciones'].'">ACTUALIZAR</a> ✔️</td>
-                    <td><a class="eliminar" href="eliminar.php?ID_Turno='.$turnos['ID_Turno'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
+                    <td>'.$turnos['diahora'].'</td>
+                    <td>'.$turnos['nombrepaciente'].'</td>
+                    <td>'.$turnos['nombremedico'].'</td>
+                    <td>'.$turnos['estado'].'</td>
+                    <td><a class="actualizar" href="editar.php?idturno='.$turnos['idturno'].'&dni='.$turnos['dni'].'&dh='.$turnos['diahora'].'&es='.$turnos['estado'].'">ACTUALIZAR</a> ✔️</td>
+                    <td><a class="eliminar" href="eliminar.php?idturno='.$turnos['idturno'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
             }
         }

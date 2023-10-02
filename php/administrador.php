@@ -8,13 +8,15 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #DFDFDF;
+}
+.menu {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #DFDFDF;
 }
 footer {
     margin: 16px 0 24px 0;
@@ -36,13 +38,27 @@ button {
 a {
     text-decoration: none;
 }
-    </style>
+.volver {
+    color: black;
+    position: fixed;
+    left: 1%;
+    top: 2%;
+    font-weight: bold;
+    border: 3px solid #94ADD7;
+    border-radius: 8px;
+    background: rgb(148, 173, 215, 0.7);
+    padding: 3px;
+}
+</style>
 <body>
-    <button><a href="pacientes/pacientes.php">ADMINISTRACIÓN DE PACIENTES</a></button>
-    <br><br>
-    <button><a href="medicos/medicos.php">ADMINISTRACIÓN DE MÉDICOS</a></button>
-    <br><br>
-    <button><a href="turnos/turnos.php">ADMINISTRACIÓN DE TURNOS</a></button>
-    <footer>Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>
+    <a class="volver" href="../index.php">VOLVER</a>
+    <div class="menu">
+        <button><a href="pacientes/pacientes.php">ADMINISTRACIÓN DE PACIENTES</a></button>
+        <br><br>
+        <button><a href="medicos/medicos.php">ADMINISTRACIÓN DE MÉDICOS</a></button>
+        <br><br>
+        <button><a href="turnos/turnos.php">ADMINISTRACIÓN DE TURNOS</a></button>
+        <footer>Clínica &copy; <script>document.write(new Date().getFullYear())</script></footer>
+    </div>
 </body>
 </html>

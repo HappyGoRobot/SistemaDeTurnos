@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador de: Pacientes</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../styles.css?v=<?php echo time();?>">
     <script src="../../js/confirmar.js"></script>
 </head>
 <body>
-    <a style="color: black; position: fixed; left: 1%; top: 2%; font-weight: bold; border: 3px solid #94ADD7; border-radius: 8px; background: rgb(148, 173, 215, 0.7); padding: 3px;" href="../administrador.php">VOLVER</a>
+    <a class="volver" href="../administrador.php">VOLVER</a>
     <div align="center"><h1>ADMINISTRADOR DE: PACIENTES</h1></div>
     <?php
     require_once("../../php/conectar.php");
-    $peticion = mysqli_query($pacientes, "SELECT pacientes.*, obrasocial.obrasocial FROM pacientes, obrasocial WHERE obrasocial.id_os = pacientes.id_os");
+    $peticion = mysqli_query($pacientes, "SELECT pacientes.*, obrasocial.obrasocial FROM pacientes, obrasocial WHERE obrasocial.idobrasocial = pacientes.idobrasocial");
     echo '
     <div align="center">
     <div class="tabla">
@@ -23,7 +23,7 @@
             <tr>
                 <th>NOMBRE COMPLETO</th>
                 <th>FECHA DE NACIMIENTO</th>
-                <th>GÉNERO</th>
+                <th>SEXO</th>
                 <th>DNI</th>
                 <th>OBRA SOCIAL</th>
                 <th>TELÉFONO</th>
@@ -37,15 +37,15 @@
             while($pacientes = mysqli_fetch_assoc($peticion)){
                 echo '
                 <tr>
-                    <td>'.$pacientes['NombreCompleto'].'</td>
-                    <td>'.date("d-m-Y", strtotime($pacientes['FechaNacimiento'])).'</td>
-                    <td>'.$pacientes['Genero'].'</td>
-                    <td>'.$pacientes['DNI'].'</td>
+                    <td>'.$pacientes['nombrepaciente'].'</td>
+                    <td>'.date("d-m-Y", strtotime($pacientes['fechanacimiento'])).'</td>
+                    <td>'.$pacientes['sexo'].'</td>
+                    <td>'.$pacientes['dni'].'</td>
                     <td>'.$pacientes['obrasocial'].'</td>
-                    <td>'.$pacientes['TelefonoContacto'].'</td>
-                    <td>'.$pacientes['DireccionPaciente'].'</td>
-                    <td><a class="actualizar" href="editar.php?ID_Paciente='.$pacientes['ID_Paciente'].'&no='.$pacientes['NombreCompleto'].'&fn='.$pacientes['FechaNacimiento'].'&gr='.$pacientes['Genero'].'&dni='.$pacientes['DNI'].'&ss='.$pacientes['obrasocial'].'&di='.$pacientes['DireccionPaciente'].'&tf='.$pacientes['TelefonoContacto'].'">ACTUALIZAR</a> ✔️</td>
-                    <td><a class="eliminar" href="eliminar.php?ID_Paciente='.$pacientes['ID_Paciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
+                    <td>'.$pacientes['telefonopaciente'].'</td>
+                    <td>'.$pacientes['direccionpaciente'].'</td>
+                    <td><a class="actualizar" href="editar.php?idpaciente='.$pacientes['idpaciente'].'&no='.$pacientes['nombrepaciente'].'&fn='.$pacientes['fechanacimiento'].'&gr='.$pacientes['sexo'].'&dni='.$pacientes['dni'].'&di='.$pacientes['direccionpaciente'].'&tf='.$pacientes['telefonopaciente'].'">ACTUALIZAR</a> ✔️</td>
+                    <td><a class="eliminar" href="eliminar.php?idpaciente='.$pacientes['idpaciente'].'" onclick="confirmar();">ELIMINAR</a> ❌</td>
                 </tr>';
             }
         }

@@ -2,14 +2,14 @@
 require_once("../conectar.php");
 
 $peticion = mysqli_query($medicos, "UPDATE medicos SET 
-    NombreCompletoM = '".$_POST['NombreCompletoM']."',
-    EspecialidadMedica = '".$_POST['EspecialidadMedica']."',
-    TelefonoContactoM = '".$_POST['TelefonoContactoM']."',
-    DireccionConsulta = '".$_POST['DireccionConsulta']."'
-    WHERE ID_Medico = '".$_POST['ID_Medico']."'
+    nombremedico = '".$_POST['nombremedico']."',
+    idespecialidad = '".$_POST['idespecialidad']."',
+    telefonomedico = '".$_POST['telefonomedico']."',
+    direccionmedico = '".$_POST['direccionmedico']."'
+    WHERE idmedico = '".$_POST['idmedico']."'
     LIMIT 1");
 
 if($peticion){
-    header("Location: ../../index.php");
+    header("Location: medicos.php");
 }
 ?>

@@ -231,3 +231,14 @@ a.actualizar:link, a.actualizar:visited {
     position: relative;
     display: inline-block;
 }
+.volver {
+    color: black;
+    position: fixed;
+    left: 1%;
+    top: 2%;
+    font-weight: bold;
+    border: 3px solid #94ADD7;
+    border-radius: 8px;
+    background: rgb(148, 173, 215, 0.7);
+    padding: 3px;
+}
